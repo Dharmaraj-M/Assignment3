@@ -1,0 +1,51 @@
+<div class="heading">
+    <h1>Edit Todos</h1>
+</div>
+<mat-card class="myCard">
+    <mat-card-content>
+        <mat-form-field class="formField">
+            <mat-label>Id</mat-label>
+            <input type="text" matInput [(ngModel)]="id" readonly>
+        </mat-form-field>
+        <mat-form-field class="formField">
+            <mat-label>User Id</mat-label>
+            <input type="number" matInput [(ngModel)]="userId" placeholder="User Id">
+        </mat-form-field>
+        <mat-form-field class="formField">
+            <mat-label>Title</mat-label>
+            <input type="text" matInput [(ngModel)]="title" placeholder="Title">
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="completed" [labelPosition]="'before'">Completed?</mat-checkbox>
+        <div>
+            <button mat-raised-button color="primary" (click)="updateTodo()">Submit</button>
+        </div>
+    </mat-card-content>
+</mat-card><br><br>
+<table mat-table *ngIf="tableDisplay" [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef> User Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+    </ng-container>
+
+    <!-- Completed Column -->
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <!-- Completed Column -->
+    <ng-container matColumnDef="completed">
+        <th mat-header-cell *matHeaderCellDef> Completed </th>
+        <td mat-cell *matCellDef="let element"> {{element.completed}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table><br><br>

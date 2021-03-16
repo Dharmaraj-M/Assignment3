@@ -1,0 +1,25 @@
+.myCard {
+    margin: auto;
+    text-align: center;
+    width: 40%;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+.formField {
+    width: 80%;
+}
+
+table {
+    margin: auto;
+    width: 80%;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.mat-form-field {
+    padding: 1%;
+}

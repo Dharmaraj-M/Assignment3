@@ -1,0 +1,18 @@
+.heading {
+    text-align: center;
+    width: 90%;
+}
+
+.searchBar {
+    text-align: right;
+}
+
+table {
+    margin: auto;
+    margin-top: 3%;
+    width: 80%;
+}
+
+.mat-form-field {
+    width: 20%;
+}

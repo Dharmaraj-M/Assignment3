@@ -1,0 +1,38 @@
+.myCard {
+    margin: auto;
+    text-align: center;
+    width: 40%;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+.formField {
+    width: 80%;
+}
+
+table {
+    margin: auto;
+    width: 80%;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.mat-form-field {
+    padding: 1%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.mat-checkbox {
+    padding-left: 10%;
+    padding-bottom: 3%;
+    display: flex;
+    align-content: flex-start;
+}

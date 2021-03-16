@@ -1,0 +1,29 @@
+<mat-card class="myCard">
+    <mat-card-content>
+        <div class="inputDivision">
+            <div>
+                <h1>Login Page</h1>
+            </div>
+            <form [formGroup]="myLoginForm" (ngSubmit)="onSubmit()">
+                <mat-card-content>
+                    <mat-form-field appearance="outline">
+                        <mat-label>User Name</mat-label>
+                        <input type="text" formControlName="userName" matInput>
+                        <mat-error *ngIf="myLoginForm.get('userName').hasError('required')">User Name cannot be empty</mat-error>
+                    </mat-form-field><br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" formControlName="passWord" matInput>
+                        <mat-error *ngIf="myLoginForm.get('passWord').hasError('required')">Password cannot be empty</mat-error>
+                    </mat-form-field>
+                    <div>
+                        <button type="submit" [disabled]="!myLoginForm.valid" mat-raised-button color="primary">Submit</button>
+                    </div>
+                    <div class="resultDiv">
+                        <h3>{{result}}</h3>
+                    </div>
+                </mat-card-content>
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>

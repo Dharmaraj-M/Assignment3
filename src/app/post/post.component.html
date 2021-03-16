@@ -1,0 +1,57 @@
+<div class="heading">
+    <h1>Post Todos</h1>
+</div>
+<mat-card class="myCard">
+    <mat-card-content>
+        <form [formGroup]="myForm">
+            <mat-form-field class="formField">
+                <mat-label>User Id</mat-label>
+                <input type="text" matInput formControlName="userId" placeholder="User Id">
+                <mat-error *ngIf="myForm.get('userId').hasError('required')">User Id cannot be empty</mat-error>
+            </mat-form-field>
+            <mat-form-field class="formField">
+                <mat-label>Title</mat-label>
+                <input type="text" matInput formControlName="title" placeholder="Title">
+                <mat-error *ngIf="myForm.get('title').hasError('required')">Title cannot be empty</mat-error>
+            </mat-form-field>
+            <mat-form-field class="formField">
+                <mat-label>Body</mat-label>
+                <input type="text" matInput formControlName="body" placeholder="Body">
+                <mat-error *ngIf="myForm.get('body').hasError('required')">Body cannot be empty</mat-error>
+            </mat-form-field>
+            <div>
+                <button mat-raised-button color="primary" (click)="postData()" [disabled]="!myForm.valid">Submit</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card><br><br>
+
+<table *ngIf="!(dataSource == null)" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- User Id Column -->
+    <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef> User Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+    </ng-container>
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <!-- Completed Column -->
+    <ng-container matColumnDef="body">
+        <th mat-header-cell *matHeaderCellDef> Body </th>
+        <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table><br><br>

@@ -1,0 +1,21 @@
+.myCard {
+    margin: auto;
+    margin-top: 10%;
+    width: 40%;
+    height: 50%;
+}
+
+.inputDivision {
+    padding-top: 3%;
+    text-align: center;
+}
+
+.resultDiv {
+    color: red;
+}
+
+.mat-form-field {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 70%;
+}
